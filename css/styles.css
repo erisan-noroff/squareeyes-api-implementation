@@ -63,7 +63,7 @@ form.flex .flex-row {
 
 .secondary-hero {
     position: relative;
-    background: url("../assets/images/Test.png") no-repeat center/cover;
+    background: url("../assets/images/SecondaryHero.png") no-repeat center/cover;
     width: clamp(345px, 95vw, 1065px);
     height: clamp(339px, 95vh, 628px);
     color: white;
