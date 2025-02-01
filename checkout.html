@@ -11,7 +11,7 @@
 
 <body>
 <header class="flex align-center justify-space-around">
-    <img src="assets/images/SquareEyes_Logo.png" id="logo" alt="Square Eyes logo" />
+    <img src="assets/images/SquareEyes_Logo.png" id="logo" alt="Square Eyes logo">
     <nav class="hide-on-mobile">
         <ul class="flex">
             <li><a href="index.html">Home</a></li>
@@ -26,7 +26,7 @@
         </ul>
     </nav>
     <label class="hamburger-menu">
-        <input type="checkbox" aria-label="Toggle navigation menu" />
+        <input type="checkbox" aria-label="Toggle navigation menu">
     </label>
     <aside class="sidebar">
         <nav>
@@ -72,21 +72,21 @@
             <form>
                 <div class="flex flex-column">
                     <label for="email">Email</label>
-                    <input class="input-style" id="email" type="text" placeholder="name@example.com" />
+                    <input class="input-style" id="email" type="text" placeholder="name@example.com">
                 </div>
                 <div class="flex flex-column">
                     <label for="card-number">Card Number</label>
-                    <input class="input-style" id="card-number" type="text" />
+                    <input class="input-style" id="card-number" type="text" pattern="\d{16}" title="Card number must be 16 digits">
                 </div>
                 <div class="flex flex-row">
                     <div class="flex flex-column">
                         <label for="expiry-date">Expiry Date</label>
                         <!-- If we could use JS, I would have a own error message for if the user attempts to use a year that has expired (i.e. 01) -->
-                        <input class="input-style" id="expiry-date" type="text" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/2[0-9]" title="Please enter a valid expiry date in MM/YY format" />
+                        <input class="input-style" id="expiry-date" type="text" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/2[0-9]" title="Please enter a valid expiry date in MM/YY format">
                     </div>
                     <div class="flex flex-column flex-grow">
                         <label for="cvv">CVV</label>
-                        <input class="input-style" id="cvv" type="text" pattern="\d{3}" title="CVV must be 3 digits" />
+                        <input class="input-style" id="cvv" type="text" pattern="\d{3}" title="CVV must be 3 digits">
                     </div>
                 </div>
                 <div class="flex flex-column">
@@ -116,19 +116,19 @@
     </section>
 </main>
 <footer>
-    <section id="newsletter" class="centered-grid-layout">
+    <div id="newsletter" class="centered-grid-layout">
         <div class="flex flex-column m-t-b-1">
             <span id="newsletter-header" class="text-bold text-uppercase">be the first to experience our latest movies</span>
             <p>Don't miss out on our newest movies! Stay tuned by subscribing to our newsletter.</p>
             <div id="newsletter-input-container">
-                <input class="input-style" type="text" placeholder="name@example.com" aria-label="Email address" />
+                <input class="input-style" type="text" placeholder="name@example.com" aria-label="Email address">
                 <button class="standard-button" type="button"> subscribe</button>
             </div>
         </div>
-    </section>
-    <section class="flex">
+    </div>
+    <div class="flex">
         <span id="copyright">Copyright © 2025 Square Eyes</span>
-    </section>
+    </div>
 </footer>
 </body>
 </html>
