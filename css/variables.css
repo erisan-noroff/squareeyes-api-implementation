@@ -1,0 +1,37 @@
+/* Use this file to store your useful variables */
+/* This could be colors, fonts, or padding sizes! */
+
+:root {
+  --color-primary: #000;
+  --color-secondary: #1B1B1B;
+  --color-background-primary: #FCFBF4;
+  --color-background-secondary: #DDD;
+  --color-hero-button-background: #F90;
+  --color-standard-button-background: #31D962;
+  --display-font: "Bebas Neue", sans-serif;
+  --body-font: "Assistant", serif;
+  --font-size-xxl: 2.5rem;
+  --font-size-xl: 2.25rem;
+  --font-size-lg: 2rem;
+  --font-size-md: 1.5rem;
+  --font-size-sm: 1.25rem;
+  --navbar-width: 60px;
+  --navbar-height: 8px;
+  --hamburger-gap: 6px;
+  --hamburger-margin: 1rem;
+  --hamburger-height: calc(var(--navbar-height) * 3 + var(--hamburger-gap) * 2);
+  --animation-timing: 200ms ease-in-out;
+  --gap-sm: 0.5rem;
+  --gap-md: 1rem;
+  --gap-lg: 1.25rem;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../assets/fonts/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Assistant";
+  src: url("../assets/fonts/Assistant-VariableFont_wght.ttf");
+}

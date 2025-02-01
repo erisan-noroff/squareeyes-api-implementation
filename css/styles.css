@@ -1,0 +1,331 @@
+/* Use import to split up your CSS into manageable chunks */
+@import url("./reset.css");
+/* Files that are only needed to be imported are called partials */
+/* These are marked with an underscore: */
+@import url("./variables.css");
+/* Feel free to add as many of these imports as you need */
+@import url("./utilities.css");
+@import url("./typography.css");
+@import url("./hamburger-menu.css");
+
+body {
+    background-color: var(--color-background-primary);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5rem 1.50rem;
+    border-bottom: 2px solid var(--color-primary);
+    height: 6.25rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background-primary);
+}
+
+.centered-grid-layout {
+    margin-top: 1.25rem;
+    display: grid;
+    place-items: center;
+    gap: 1.875rem;
+}
+
+#logo {
+    width: clamp(156px, 50vw, 240px);
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    gap: 1.875rem;
+}
+
+.show-on-mobile {
+    display: none;
+}
+
+textarea {
+    resize: none;
+    height: 12.5rem;
+    padding: 0.625rem 0 0 0.625rem;
+}
+
+form.flex .flex-row {
+    gap: var(--gap-md);
+}
+
+.hero {
+    background: url("../assets/images/hero.jpg") no-repeat center/cover;
+    width: clamp(345px, 95vw, 1065px);
+    height: clamp(339px, 95vh, 628px);
+}
+
+.secondary-hero {
+    position: relative;
+    background: url("../assets/images/Test.png") no-repeat center/cover;
+    width: clamp(345px, 95vw, 1065px);
+    height: clamp(339px, 95vh, 628px);
+    color: white;
+}
+
+.secondary-hero > button {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.66);
+}
+
+.hero-content > button {
+    background-color: var(--color-hero-button-background);
+    height: 3.5rem;
+    padding: 0 2rem;
+    font-size: var(--font-size-xxl);
+    border-radius: 0.75rem;
+}
+
+.card-color {
+    background-color: var(--color-background-secondary);
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background-color: var(--color-background-secondary);
+}
+
+.movie-card > a > img {
+    width: 254px;
+    height: 378px;
+}
+
+.movie-card > p > a {
+    text-decoration: none;
+}
+
+button {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: var(--display-font);
+    border-radius: 0.25rem;
+    border-color: transparent;
+}
+
+.standard-button {
+    background-color: var(--color-standard-button-background);
+    font-size: var(--font-size-md);
+}
+
+.standard-button-lg {
+    background-color: var(--color-standard-button-background);
+    font-size: var(--font-size-lg);
+    padding: 0.2rem 0.8rem 0 0.8rem;
+}
+
+#order-summary {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border: 1px solid #000;
+    width: 22rem;
+}
+
+#order-summary > h2 {
+    border-bottom: 1px solid #000;
+    width: 100%;
+    text-align: center;
+}
+
+#order-summary > div > p {
+    margin: 0;
+}
+
+#order-summary > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.625rem;
+    width: 100%;
+    gap: var(--gap-sm);
+}
+
+#order-summary > div:last-child {
+    border-top: 1px solid #000;
+    background-color: var(--color-background-secondary);
+}
+
+#newsletter {
+    background-color: var(--color-background-secondary);
+    border-bottom: 0.25rem #373736;
+}
+
+#newsletter-input-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap-md);
+}
+
+#newsletter-input-container input[type="text"] {
+    flex-grow: 1;
+}
+
+#newsletter-input-container button {
+    flex-grow: 0.5;
+}
+
+#copyright {
+    font-family: var(--display-font);
+    font-size: var(--font-size-md);
+    border-top: 2px solid var(--color-primary);
+    width: 100%;
+    text-align: center;
+}
+
+.input-style {
+    border-radius: 0.5rem;
+    border: 1px solid #000;
+    margin-bottom: 1rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    height: 2.5rem;
+    padding: 0 0.625rem;
+}
+
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "movie1 movie2 movie3 movie4";
+    gap: 1rem;
+}
+
+.movie-description-content {
+    display: flex;
+    place-items: center;
+    gap: 4.375rem;
+}
+
+.movie-description-content > img {
+    width: 380px;
+    height: 560px;
+}
+
+.movie-description-container {
+    display: flex;
+    width: 21.25rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-and-right-cols-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.left-and-right-cols-flex > div {
+    gap: var(--gap-md);
+}
+
+@media (max-width: 1024px) {
+    .movies-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "movie1 movie2 movie3"
+            ". movie4 .";
+    }
+}
+
+@media (max-width: 900px) {
+    #order-summary {
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        border-bottom: none;
+    }
+
+    .centered-grid-layout {
+        gap: var(--gap-md);
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .latest-movies {
+        flex-direction: column;
+    }
+
+    .movies-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "movie1 movie2"
+            "movie3 movie4";
+    }
+    
+    .secondary-hero > button {
+        top: 70%;
+    }
+    
+    .left-and-right-cols-flex {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: var(--gap-md);
+    }
+
+    .movie-description-content {
+        flex-direction: column;
+        gap: var(--gap-md);
+    }
+    
+    #newsletter {
+        padding: 0 1rem;
+        margin-bottom: 0;
+    }
+
+    #newsletter-input-container {
+        gap: var(--gap-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 4rem 1.50rem;
+    }
+    
+    .movies-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "movie1"
+            "movie2"
+            "movie3"
+            "movie4";
+    }
+    
+    #newsletter-input-container {
+        flex-direction: column;
+        gap: var(--gap-sm);
+    }
+    
+    #newsletter-input-container input[type="text"] {
+        width: 100%;
+    }
+    
+    #newsletter-input-container button {
+        width: 100%;
+    }
+}

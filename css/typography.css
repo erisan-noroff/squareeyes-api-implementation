@@ -1,0 +1,99 @@
+nav ul li a {
+    font-size: var(--font-size-xxl);
+}
+
+a {
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: var(--font-size-xl);
+    font-family: var(--display-font);
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: var(--font-size-md);
+    font-family: var(--body-font), sans-serif;
+    text-transform: capitalize;
+}
+
+p {
+    font-family: var(--body-font), sans-serif;
+    max-width: 40rem;
+}
+
+label {
+    font-weight: 700;
+    font-family: var(--body-font), serif;
+}
+
+header a {
+    font-size: var(--font-size-xl);
+    font-family: var(--display-font);
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.active-tab {
+    text-decoration: underline;
+    text-decoration-thickness: 0.20rem;
+}
+
+.hero-content > h1 {
+    padding-top: 2rem;
+}
+
+.hero-content > p {
+    font-size: var(--font-size-xl);
+    max-width: none;
+}
+
+.hero-content > h1, .hero-content > p {
+    color: var(--color-background-primary);
+    -webkit-text-stroke: 0.25rem var(--color-primary);
+    paint-order: stroke fill;
+}
+
+.movie-card > p {
+    font-family: 'Assistant', serif;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 0.5rem;
+}
+
+.secondary-hero > h1 {
+    margin: 4rem 0 0 2rem;
+}
+
+#newsletter-header {
+    font-size: var(--font-size-md);
+    font-family: var(--display-font);
+}
+
+.movie-description-container > p {
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 768px) {
+    .hero p {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: var(--font-size-lg);
+        max-width: 25rem;
+    }
+
+    p {
+        max-width: 20rem;
+    }
+
+    .secondary-hero > h1 {
+        margin: 4rem 0 0 1rem;
+    }
+}

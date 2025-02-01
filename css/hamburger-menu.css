@@ -1,0 +1,76 @@
+.hamburger-menu {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+    display: none;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin);
+    right: var(--hamburger-margin);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--navbar-width);
+    height: var(--navbar-height);
+    background-color: black;
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing);
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before { 
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--navbar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--navbar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+.sidebar {
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 2rem);
+    margin-right: calc(var(--hamburger-margin) + 1rem);
+    max-width: 10rem;
+    gap: var(--gap-md);
+    background-color: var(--color-background-primary);
+    z-index: 1;
+    /*transition: translate var(--animation-timing);
+    translate: 100%;
+    min-height: 100vh;*/
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+}
