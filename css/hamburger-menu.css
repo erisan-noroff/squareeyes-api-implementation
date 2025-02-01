@@ -52,17 +52,24 @@
 
 .sidebar {
     display: none;
-    flex-direction: column;
-    padding: 0.5rem 1rem;
-    margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 2rem);
-    margin-right: calc(var(--hamburger-margin) + 1rem);
-    max-width: 10rem;
-    gap: var(--gap-md);
-    background-color: var(--color-background-primary);
+    position: fixed;
+    top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    right: var(--hamburger-margin);
     z-index: 1;
-    /*transition: translate var(--animation-timing);
-    translate: 100%;
-    min-height: 100vh;*/
+    padding: 1rem;
+    background-color: var(--color-background-primary);
+}
+
+.sidebar > nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar > nav > ul > li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .hamburger-menu:has(input:checked) + .sidebar {
