@@ -42,10 +42,6 @@ nav ul {
     gap: 1.875rem;
 }
 
-.show-on-mobile {
-    display: none;
-}
-
 textarea {
     resize: none;
     height: 12.5rem;
