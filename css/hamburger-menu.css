@@ -4,7 +4,7 @@
     display: none;
     flex-direction: column;
     gap: var(--hamburger-gap);
-    width: max-content;
+    width: auto;
     position: absolute;
     top: var(--hamburger-margin);
     right: var(--hamburger-margin);
