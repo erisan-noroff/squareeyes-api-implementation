@@ -69,7 +69,7 @@ form.flex .flex-row {
     color: white;
 }
 
-.secondary-hero > button {
+.secondary-hero > a {
     position: absolute;
     top: 50%;
     left: 10%;
@@ -85,7 +85,9 @@ form.flex .flex-row {
     background: rgba(0, 0, 0, 0.66);
 }
 
-.hero-content > button {
+.hero-content > a.button,
+.hero-content > a.button:link,
+.hero-content > a.button:visited {
     background-color: var(--color-hero-button-background);
     height: 3.5rem;
     padding: 0 2rem;
@@ -138,21 +140,23 @@ form.flex .flex-row {
     justify-content: center;
 }
 
-button {
-    text-transform: uppercase;
-    cursor: pointer;
+.button,
+.button:link,
+.button:visited {
     font-family: var(--display-font);
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--color-standard-button-background);
     border-radius: 0.25rem;
     border-color: transparent;
+    cursor: pointer;
 }
 
-.standard-button {
-    background-color: var(--color-standard-button-background);
-    font-size: var(--font-size-md);
-}
-
-.standard-button-lg {
-    background-color: var(--color-standard-button-background);
+.button-lg,
+.button-lg:link, 
+.button-lg:visited {
     font-size: var(--font-size-lg);
     padding: 0.2rem 0.8rem 0 0.8rem;
 }
@@ -277,7 +281,7 @@ input {
             "movie3 movie4";
     }
     
-    .secondary-hero > button {
+    .secondary-hero > a {
         top: 70%;
     }
     
