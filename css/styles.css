@@ -58,6 +58,28 @@ form.flex .flex-row {
     height: clamp(339px, 95vh, 628px);
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.66);
+}
+
+.hero-content a.button,
+.hero-content a.button:link,
+.hero-content a.button:visited {
+    display: flex;
+    align-items: end;
+    background-color: var(--color-hero-button-background);
+    height: 3.5rem;
+    padding: 0 2rem;
+    font-size: var(--font-size-xxl);
+    border-radius: 0.75rem;
+}
+
 .secondary-hero {
     position: relative;
     background: url("../assets/images/SecondaryHero.png") no-repeat center/cover;
@@ -70,26 +92,6 @@ form.flex .flex-row {
     position: absolute;
     top: 50%;
     left: 10%;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    justify-content: space-evenly;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.66);
-}
-
-.hero-content > a.button,
-.hero-content > a.button:link,
-.hero-content > a.button:visited {
-    background-color: var(--color-hero-button-background);
-    height: 3.5rem;
-    padding: 0 2rem;
-    font-size: var(--font-size-xxl);
-    border-radius: 0.75rem;
 }
 
 .card-color {
