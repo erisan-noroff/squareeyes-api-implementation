@@ -56,9 +56,13 @@
     top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
     right: var(--hamburger-margin);
     z-index: 1;
-    padding: 1rem;
+    padding: 0.75rem;
     background-color: var(--color-background-primary);
     border-radius: 0.5rem;
+}
+
+.sidebar a {
+    font-size: var(--font-size-lg);
 }
 
 .sidebar > nav > ul {
