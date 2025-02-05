@@ -51,10 +51,19 @@ header a {
     max-width: none;
 }
 
-.hero-content > h1, .hero-content > p {
+.hero-content > h1,
+.hero-content > p,
+.secondary-hero > h1 {
     color: var(--color-background-primary);
     -webkit-text-stroke: 0.25rem var(--color-primary);
     paint-order: stroke fill;
+}
+
+.hero-content > h1::selection,
+.hero-content > p::selection,
+.secondary-hero > h1::selection {
+    color: var(--color-background-primary);
+    background-color: var(--color-primary);
 }
 
 .movie-card > p {
