@@ -42,6 +42,11 @@ nav ul {
     gap: 1.875rem;
 }
 
+nav ul li a:hover {
+    border-top: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
 textarea {
     resize: none;
     height: 12.5rem;
