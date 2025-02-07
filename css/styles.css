@@ -76,13 +76,11 @@ form.flex .flex-row {
 .hero-content a.button,
 .hero-content a.button:link,
 .hero-content a.button:visited {
-    display: flex;
     background-color: var(--color-hero-button-background);
     height: 3.5rem;
     padding: 0 2rem;
     font-size: var(--font-size-xxl);
     border-radius: 0.75rem;
-    border: 4px solid transparent;
 }
 
 .hero-content a.button:hover {
