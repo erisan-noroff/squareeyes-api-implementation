@@ -8,7 +8,7 @@ a {
 
 h1 {
     font-size: var(--font-size-xl);
-    font-family: var(--display-font);
+    font-family: var(--display-font), sans-serif;
     text-transform: uppercase;
     margin-top: 0;
 }
@@ -26,12 +26,12 @@ p {
 
 label {
     font-weight: 700;
-    font-family: var(--body-font), serif;
+    font-family: var(--body-font), sans-serif;
 }
 
 header a {
     font-size: var(--font-size-xl);
-    font-family: var(--display-font);
+    font-family: var(--display-font), sans-serif;
     color: var(--color-primary);
     text-decoration: none;
     text-transform: uppercase;
@@ -79,7 +79,7 @@ header a {
 
 #newsletter-header {
     font-size: var(--font-size-md);
-    font-family: var(--display-font);
+    font-family: var(--display-font), sans-serif;
 }
 
 .movie-description-container > p {
