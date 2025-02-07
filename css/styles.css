@@ -114,10 +114,6 @@ form.flex .flex-row {
     left: 10%;
 }
 
-.card-color {
-    background-color: var(--color-background-secondary);
-}
-
 .movie-card {
     display: flex;
     flex-direction: column;
