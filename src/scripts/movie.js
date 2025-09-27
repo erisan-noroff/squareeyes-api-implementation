@@ -24,7 +24,7 @@ class Movie {
                 ? movie.data.image.alt
                 : `${movie.data.title} movie cover`;
         } catch (err) {
-            throw new Error('Unexpected error occurred when loading movie details.');
+            throw new Error(`Unexpected error ${err.message} occurred when loading movie details.`);
         }
     }
 }
