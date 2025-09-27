@@ -1,6 +1,6 @@
 import { ApiClient } from './apiClient.js';
 
-class MovieDescription {
+export class MovieDetails {
     constructor (movieId) {
         this.movieId = movieId;
     }
@@ -31,6 +31,6 @@ class MovieDescription {
 
 document.addEventListener('DOMContentLoaded', async () => {
     const parameters = new URLSearchParams(window.location.search);
-    const movie = new MovieDescription(parameters.get('id'));
+    const movie = new MovieDetails(parameters.get('id'));
     await movie.init();
 });

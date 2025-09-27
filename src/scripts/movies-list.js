@@ -1,15 +1,15 @@
 import { ApiClient } from './apiClient.js';
 import { MovieCardRenderer } from './movie-card-renderer.js';
 
-class Home {
+class MoviesList {
     async init () {
-        let filteredMovies;
         const apiClient = new ApiClient();
+        let sortedMovies;
         try {
             // No parameter required to fetch all movies.
             const response = await apiClient.get('');
-            // Rather than making several requests to the API, we filter the top 4 highest movies we want from the full list.
-            filteredMovies = response.data.sort((a, b) => b.rating - a.rating).slice(0, 4);
+            // Sorted by rating in descending order.
+            sortedMovies = response.data.sort((a, b) => b.rating - a.rating);
         } catch (e) {
             console.error(e.message);
             // Fallback in case the loading indicator element is not found in the DOM.
@@ -22,14 +22,10 @@ class Home {
 
         // Populating the list of movies. Replaces the loading indicator with the actual content once loaded.
         const moviesContainer = document.getElementById('movies-container');
-        new MovieCardRenderer(moviesContainer, filteredMovies).init();
-
-        // Shows the header once the content has been rendered
-        if (moviesContainer.innerText && filteredMovies.length > 0)
-            document.getElementById('hidden-until-loaded').classList.remove('hidden');
+        new MovieCardRenderer(moviesContainer, sortedMovies).init();
     }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await new Home().init();
+    await new MoviesList().init();
 });
