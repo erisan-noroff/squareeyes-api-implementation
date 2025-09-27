@@ -6,11 +6,13 @@ export class MovieDetails {
     }
 
     async init () {
-        const movie = await new ApiClient().get(this.movieId);
-        if (!movie)
-            throw new Error(`Error occurred when retrieving movie data: ${movie}`);
-
+        const loadingIndicator = document.getElementById('loading');
         try {
+            const movie = await new ApiClient().get(this.movieId);
+            if (!movie)
+               throw new Error(`Error occurred when retrieving movie data: ${movie}`);
+
+            loadingIndicator.remove();
             const metaData = document.querySelector('meta');
             metaData.setAttribute('content', `${movie.data.title} movie description page`);
             metaData.setAttribute('title', `${movie.data.title} movie details`);
@@ -23,8 +25,14 @@ export class MovieDetails {
             document.getElementById('movie-image').alt = movie.data.image.alt?.length > 0
                 ? movie.data.image.alt
                 : `${movie.data.title} movie cover`;
+            
+            document.getElementById('hidden-until-loaded').classList.remove('hidden');
         } catch (e) {
-            throw new Error(`Unexpected error ${e.message} occurred when loading movie details.`);
+            console.error(e.message);
+            // Fallback in case the loading indicator element is not found in the DOM.
+            loadingIndicator
+                ? loadingIndicator.innerText = 'Failed to load movie details. Please try again later.'
+                : alert('Failed to load movie movie details. Please try again later.');
         }
     }
 }
