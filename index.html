@@ -6,12 +6,13 @@
     <meta name="description" content="Discover and purchase unique, high-quality movies at affordable prices while supporting small filmmakers. Explore our latest movie collections and enjoy an unforgettable viewing experience.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Square Eyes - Home</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <script src="src/scripts/index.js" type="module" defer></script>
 </head>
 
 <body>
 <header>
-    <img src="assets/images/SquareEyes_Logo.png" id="logo" alt="Square Eyes logo">
+    <img src="src/assets/images/SquareEyes_Logo.png" id="logo" alt="Square Eyes logo">
     <nav class="hide-on-mobile">
         <ul class="flex">
             <li><a class="active-tab" href="index.html">Home</a></li>
@@ -74,40 +75,10 @@
         </div>
     </section>
     <section>
-        <h2>latest movies</h2>
-        <div class="movies-container">
-            <div class="movie-card">
-                <a href="movies/batman.html">
-                    <img src="./assets/images/Batman.jpeg" alt="Batman: Unmask The Truth movie cover, leading to the movie description page">
-                </a>
-                <p><a href="movies/batman.html">batman: unmask the truth</a></p>
-                <p>€19,99</p>
-                <a href="checkout.html" class="button">add to cart</a>
-            </div>
-            <div class="movie-card">
-                <a href="movies/godzilla.html">
-                    <img src="./assets/images/Godzilla.jpeg" alt="Godzilla: King Of The Monsters movie cover, leading to the movie description page">
-                </a>
-                <p><a href="movies/godzilla.html">godzilla: king of the monsters</a></p>
-                <p>€19,99</p>
-                <a href="checkout.html" class="button">add to cart</a>
-            </div>
-            <div class="movie-card">
-                <a href="movies/sweetheart.html">
-                    <img src="./assets/images/Sweetheart.jpeg" alt="Sweetheart movie cover, leading to the movie description page">
-                </a>
-                <p><a href="movies/sweetheart.html">sweetheart</a></p>
-                <p>€19,99</p>
-                <a href="checkout.html" class="button">add to cart</a>
-            </div>
-            <div class="movie-card">
-                <a href="movies/scream.html">
-                    <img src="./assets/images/Scream.jpeg" alt="Scream movie cover, leading to the movie description page">
-                </a>
-                <p><a href="movies/scream.html">scream</a></p>
-                <p>€19,99</p>
-                <a href="checkout.html" class="button">add to cart</a>
-            </div>
+        <h2 id="hidden-until-loaded" class="hidden">latest movies</h2>
+        <div id="movies-container">
+            <p id="loading">Loading list of movies...</p>
+            <!-- 4 latest movies will be dynamically inserted here -->
         </div>
     </section>
     <section class="secondary-hero">
