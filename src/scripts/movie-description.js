@@ -23,8 +23,8 @@ class MovieDescription {
             document.getElementById('movie-image').alt = movie.data.image.alt?.length > 0
                 ? movie.data.image.alt
                 : `${movie.data.title} movie cover`;
-        } catch (err) {
-            throw new Error(`Unexpected error ${err.message} occurred when loading movie details.`);
+        } catch (e) {
+            throw new Error(`Unexpected error ${e.message} occurred when loading movie details.`);
         }
     }
 }
