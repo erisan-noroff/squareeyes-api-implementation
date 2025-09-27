@@ -13,7 +13,7 @@ class Home {
         } catch (e) {
             console.error(e.message);
             // Fallback in case the loading indicator element is not found in the DOM.
-            const loadingIndicator = document.getElementById('loading-indicator');
+            const loadingIndicator = document.getElementById('loading');
             loadingIndicator
                 ? loadingIndicator.innerText = 'Failed to load movies. Please try again later.'
                 : alert('Failed to load movies. Please try again later.');
