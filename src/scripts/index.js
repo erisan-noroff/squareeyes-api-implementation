@@ -8,19 +8,11 @@ class Home {
             // No parameter required to fetch all movies.
             const response = await apiClient.get('');
 
-            // Rather than making several requests to the API, we filter the movies we want from the full list.
-            const allowedTitles = [
-                'The Batman',
-                'Godzilla: King of the Monsters',
-                'Scream',
-                'Sweetheart'
-            ];
-
-            filteredMovies = response.data
-                .filter(movie => allowedTitles.includes(movie.title));
+            // Rather than making several requests to the API, we filter the top 4 highest movies we want from the full list.
+            filteredMovies = response.data.sort((a, b) => b.rating - a.rating).slice(0, 4);
         } catch (e) {
             console.error(e.message);
-            // Fallback, just in case the loading indicator element is not found in the DOM.
+            // Fallback in case the loading indicator element is not found in the DOM.
             const loadingIndicator = document.getElementById('loading-indicator');
             loadingIndicator
                 ? loadingIndicator.innerText = 'Failed to load movies. Please try again later.'
@@ -33,7 +25,7 @@ class Home {
         moviesContainer.innerHTML = filteredMovies.map(movie => `
             <div class="movie-card">
                 <a href="movie.html?id=${movie.id}">
-                    <img src="${movie.image.url}" alt="${movie.image.alt?.length > 0 ? movie.image.alt : movie.title} movie cover image" />
+                    <img src="${movie.data.image.url?.length > 0 ? movie.data.image.url : ''}" alt="${movie.image.alt?.length > 0 ? movie.image.alt : movie.title} movie cover image" />
                 </a>
                 <p><a href="movies.html?id=${movie.id}">${movie.title}</a></p>
                 <p>${movie.price},-</p>
