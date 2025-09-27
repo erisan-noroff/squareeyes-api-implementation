@@ -1,12 +1,12 @@
 /* Use import to split up your CSS into manageable chunks */
-@import url("./reset.css");
+@import url("reset.css");
 /* Files that are only needed to be imported are called partials */
 /* These are marked with an underscore: */
-@import url("./variables.css");
+@import url("variables.css");
 /* Feel free to add as many of these imports as you need */
-@import url("./utilities.css");
-@import url("./typography.css");
-@import url("./hamburger-menu.css");
+@import url("utilities.css");
+@import url("typography.css");
+@import url("hamburger-menu.css");
 
 body {
     background-color: var(--color-background-primary);
@@ -130,7 +130,7 @@ form.flex .flex-row {
     text-decoration: none;
 }
 
-.movies-container {
+#movies-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "movie1 movie2 movie3 movie4";
@@ -261,8 +261,16 @@ input {
     gap: var(--gap-md);
 }
 
+.hidden {
+    display: none;
+}
+
+#loading {
+    font-size: 1.5rem; font-weight: bold;
+}
+
 @media (max-width: 1024px) {
-    .movies-container {
+    #movies-container {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
             "movie1 movie2 movie3"
@@ -294,7 +302,7 @@ input {
         flex-direction: column;
     }
 
-    .movies-container {
+    #movies-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
             "movie1 movie2"
@@ -331,7 +339,7 @@ input {
         padding: 4rem 1.50rem;
     }
     
-    .movies-container {
+    #movies-container {
         grid-template-columns: 1fr;
         grid-template-areas:
             "movie1"
