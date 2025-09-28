@@ -2,7 +2,7 @@ import { ApiClient } from './apiClient.js';
 import { MovieCardRenderer } from './movie-card-renderer.js';
 
 class Home {
-    async init () {
+    async init() {
         let filteredMovies;
         const apiClient = new ApiClient();
         try {
@@ -10,7 +10,7 @@ class Home {
             const response = await apiClient.get('');
             // Rather than making several requests to the API, we filter the top 4 highest movies we want from the full list.
             filteredMovies = response.data.sort((a, b) => b.rating - a.rating).slice(0, 4);
-        } catch (e) {
+        } catch(e) {
             console.error(e.message);
             // Fallback in case the loading indicator element is not found in the DOM.
             const loadingIndicator = document.getElementById('loading');
@@ -25,11 +25,11 @@ class Home {
         new MovieCardRenderer(moviesContainer, filteredMovies).init();
 
         // Shows the header once the content has been rendered
-        if (moviesContainer.innerText && filteredMovies.length > 0)
+        if(moviesContainer.innerText && filteredMovies.length > 0)
             document.getElementById('hidden-until-loaded').classList.remove('hidden');
     }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', async() => {
     await new Home().init();
 });

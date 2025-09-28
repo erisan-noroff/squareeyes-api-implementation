@@ -169,9 +169,15 @@ form.flex .flex-row {
     cursor: pointer;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
     background-color: var(--color-background-primary);
     border: 0.25rem solid var(--color-standard-button-background);
+}
+
+.button:disabled {
+    color: inherit;
+    cursor: not-allowed;
+    opacity: 0.8;
 }
 
 .button-lg,
