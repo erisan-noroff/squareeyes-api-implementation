@@ -37,8 +37,6 @@ export class MovieDetails {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const parameters = new URLSearchParams(window.location.search);
-    const movie = new MovieDetails(parameters.get('id'));
-    await movie.init();
-});
+const parameters = new URLSearchParams(window.location.search);
+const movie = new MovieDetails(parameters.get('id'));
+await movie.init();

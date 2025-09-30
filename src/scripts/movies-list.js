@@ -26,6 +26,4 @@ class MoviesList {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    await new MoviesList().init();
-});
+await new MoviesList().init();

@@ -30,6 +30,4 @@ class Home {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async() => {
-    await new Home().init();
-});
+await new Home().init();

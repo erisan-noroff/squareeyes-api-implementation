@@ -23,3 +23,5 @@ class CartItem {
         this.moviePrice = movie.price;
     }
 }
+
+export const cartInstance = new Cart();

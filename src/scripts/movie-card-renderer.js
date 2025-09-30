@@ -1,4 +1,4 @@
-import { cartInstance } from './cart-instance.js';
+import { cartInstance } from './cart.js';
 
 export class MovieCardRenderer {
     constructor(moviesContainer, movies) {
