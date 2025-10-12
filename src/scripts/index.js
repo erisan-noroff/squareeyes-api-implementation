@@ -1,15 +1,17 @@
 import { ApiClient } from './apiClient.js';
 import { MovieCardRenderer } from './movie-card-renderer.js';
 
-class Home {
+class MoviesList {
     async init() {
-        let filteredMovies;
         const apiClient = new ApiClient();
         try {
             // No parameter required to fetch all movies.
             const response = await apiClient.get('');
-            // Rather than making several requests to the API, we filter the top 4 highest movies we want from the full list.
-            filteredMovies = response.data.sort((a, b) => b.rating - a.rating).slice(0, 4);
+            // Sorted by rating in descending order (highest to lowest).
+            this.sortedMovies = response.data.sort((a, b) => b.rating - a.rating);
+            this.moviesContainer = document.getElementById('movies-container');
+            this.movieCardRenderer = new MovieCardRenderer(this.moviesContainer, this.sortedMovies);
+            this.addToggleFilterMenuListener();
         } catch(e) {
             console.error(e.message);
             // Fallback in case the loading indicator element is not found in the DOM.
@@ -17,17 +19,31 @@ class Home {
             loadingIndicator
                 ? loadingIndicator.innerText = 'Failed to load movies. Please try again later.'
                 : alert('Failed to load movies. Please try again later.');
-            return;
         }
+    }
 
-        // Populating the list of movies. Replaces the loading indicator with the actual content once loaded.
-        const moviesContainer = document.getElementById('movies-container');
-        new MovieCardRenderer(moviesContainer, filteredMovies).init();
+    addToggleFilterMenuListener() {
+        const filterBtn = document.getElementById('filter-toggle');
+        const filterDropdown = document.getElementById('filter-dropdown');
 
-        // Shows the header once the content has been rendered
-        if(moviesContainer.innerText && filteredMovies.length > 0)
-            document.getElementById('hidden-until-loaded').classList.remove('hidden');
+        filterBtn.addEventListener('click', () => {
+            const expanded = filterBtn.getAttribute('aria-expanded') === 'true';
+            filterBtn.setAttribute('aria-expanded', !expanded);
+            filterDropdown.style.display = expanded ? 'none' : 'block';
+        });
+
+        filterDropdown.addEventListener('click', (e) => {
+            const filterOption = e.target.closest('[data-filter]');
+            if(!filterOption)
+                return;
+
+            const selectedFilter = filterOption.getAttribute('data-filter');
+            this.movieCardRenderer.movies = selectedFilter === 'none'
+                ? this.sortedMovies
+                : this.sortedMovies.filter(movie => movie.genre && movie.genre.toLowerCase() === selectedFilter.toLowerCase());
+            this.movieCardRenderer.init();
+        });
     }
 }
 
-await new Home().init();
+await new MoviesList().init();
