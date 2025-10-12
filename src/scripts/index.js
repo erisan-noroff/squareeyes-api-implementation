@@ -13,7 +13,6 @@ class MoviesList {
             this.movieCardRenderer = new MovieCardRenderer(this.moviesContainer, this.sortedMovies);
             this.addToggleFilterMenuListener();
         } catch(e) {
-            console.error(e.message);
             // Fallback in case the loading indicator element is not found in the DOM.
             const loadingIndicator = document.getElementById('loading');
             loadingIndicator
